@@ -3,34 +3,34 @@ management.endpoints.web.exposure.include: "*"
 
 logging:
   level:
-    com.example.JpaBoard_admin: debug #??? ??????
+    com.example.JpaBoard_admin: debug #JpaBoard_admin은 메인패키지명이다
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
 
 server.port: 8081
 
 spring:
-  devtools.livereload.port: 35730 #devtools ????? ??? ?? ??? ?? ??? ??
+  devtools.livereload.port: 35730 #devtools 포트번호 충돌을 방지하기 생성
 
   datasource:
-    url: jdbc:mysql://localhost:3306/${database}   # ?????? ??? ??
+    url: jdbc:mysql://localhost:3306/${database}   # 데이터베이스 초기화 전략
 #    url: jdbc:postgresql://localhost:5432/${database}
     username: ${user}
     password: ${pw}
   #     driver-class-name: com.mysql.cj.jdbc.Driver
-  #     url: jdbc:h2:mem:testdb  # h2 ?????? ??? ??
+  #     url: jdbc:h2:mem:testdb  # h2 데이터베이스 테스트 용도
   #     username: sa
   #     driver-class-name: org.h2.Driver
   jpa:
     open-in-view: false
     defer-datasource-initialization: true
     hibernate.ddl-auto: create
-    show-sql: true  # ???? ?? ?? ??
+    show-sql: true  # 실행되는 쿼리 콘솔 출력
     properties:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
 
-  h2.console.enabled: false # h2 ?????? ???? true? ???? ??
+  h2.console.enabled: false # h2 데이터베이스 사용할때 true로 설정하면 된다
 
   sql.init.mode: ALWAYS
 
@@ -65,7 +65,6 @@ spring:
 #  sql.init.mode: always
 
 ---
-
 spring:
   config.activate.on-profile: test
   datasource.url: jdbc:h2:mem:testdb
