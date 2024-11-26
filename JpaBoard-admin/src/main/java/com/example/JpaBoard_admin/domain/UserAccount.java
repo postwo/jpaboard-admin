@@ -1,6 +1,7 @@
 package com.example.JpaBoard_admin.domain;
 
 import com.example.JpaBoard_admin.domain.constant.RoleType;
+import com.example.JpaBoard_admin.domain.converter.RoleTypesConverter;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,7 +29,6 @@ public class UserAccount extends AuditingFields {
     @Setter @Column(nullable = false) private String userPassword;
 
     @Convert(converter = RoleTypesConverter.class)
-
     @Column(nullable = false)
     private Set<RoleType> roleTypes = new LinkedHashSet<>();
 
