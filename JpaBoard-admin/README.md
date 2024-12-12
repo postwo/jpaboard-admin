@@ -65,6 +65,12 @@ Spring Boot
 * 게시판 서비스: https://github.com/djkeh/fastcampus-project-board
 
 
+# adminLte 정식 사이트(프리미엄은 유료이다)
+https://adminlte.io/
+1. 다운로드를 클릭[css](src%2Fmain%2Fresources%2Fstatic%2Fcss)
+2. https://github.com/ColorlibHQ/AdminLTE/releases 릴리즈 여기서 다운받으면 된다.
+3. Assets 에서 Source code(zip)을 다운한다.
+
 # 여기는 내가 개별적으로 알기 위해 작성 
 admin 하고 jpaboard는 별개로 봐야한다 그러므로 
 kakaooauth 키값(다른아이디 사용)도 다른걸써야하고 데이터베이스도 다른걸써야한다. 
