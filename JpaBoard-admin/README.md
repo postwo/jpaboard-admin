@@ -83,3 +83,8 @@ https://adminlte.io/
 admin 하고 jpaboard는 별개로 봐야한다 그러므로 
 kakaooauth 키값(다른아이디 사용)도 다른걸써야하고 데이터베이스도 다른걸써야한다. 
 이부분은 꼭 주의하기 
+
+# #12 - JsGrid 플러그인 추가 이거는 static/plugins/jsgrid
+그리는 기능만 제공하는 DataTable 말고
+데이터의 추가, 수정, 삭제 기능을 제공하는 테이블 플러그인이 필요하다.
+그래서 JsGrid 를 새로 선택하여 어드민 회원 관리 페이지에 적용하기로 함
