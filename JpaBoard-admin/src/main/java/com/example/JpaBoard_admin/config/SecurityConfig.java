@@ -16,6 +16,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
                 .formLogin(withDefaults()) // 기본 로그인 설정 사용
                 .logout(logout -> logout.logoutSuccessUrl("/"))
+                .oauth2Login(withDefaults())
                 .build();
     }
 
