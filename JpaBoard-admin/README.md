@@ -65,6 +65,14 @@ Spring Boot
 * 게시판 서비스: https://github.com/djkeh/fastcampus-project-board
 
 
+# thymeleaf 에러 발생
+Spring Boot 3.0 이상에서 Thymeleaf 3.1 버전이 도입되면서, #request, #session, #response와 같은 기본 제공 객체는 보안과 성능 개선을 위해 기본적으로 비활성화되었습니다. 이로 인해 #request.requestURI와 같은 표현식이 더 이상 기본적으로 작동하지 않습니다.
+2024-12-15T14:05:20.912+09:00 DEBUG 12608 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Failed to complete request: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "requestURI.startsWith('/management')" (template: "layouts/layout-left-aside" - line 38, col 65)
+2024-12-15T14:05:20.914+09:00 ERROR 12608 --- [nio-8081-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "requestURI.startsWith('/management')" (template: "layouts/layout-left-aside" - line 38, col 65)] with root cause
+
+https://www.thymeleaf.org/doc/articles/thymeleaf31whatsnew.html
+문서 참고하기
+
 # adminLte 정식 사이트(프리미엄은 유료이다)
 https://adminlte.io/
 1. 다운로드를 클릭[css](src%2Fmain%2Fresources%2Fstatic%2Fcss)
