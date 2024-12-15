@@ -1,5 +1,6 @@
 package com.example.JpaBoard_admin.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -14,8 +15,10 @@ public class ArticleManagementController {
     @GetMapping
     public String articles(
             @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable,
-            Model model
-    ) {
+            Model model, HttpServletRequest request
+            ) {
+        // requestURI를 모델에 추가
+        model.addAttribute("currentURI", request.getRequestURI());
         return "management/articles";
     }
 }
