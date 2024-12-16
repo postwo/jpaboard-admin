@@ -88,3 +88,7 @@ kakaooauth 키값(다른아이디 사용)도 다른걸써야하고 데이터베�
 그리는 기능만 제공하는 DataTable 말고
 데이터의 추가, 수정, 삭제 기능을 제공하는 테이블 플러그인이 필요하다.
 그래서 JsGrid 를 새로 선택하여 어드민 회원 관리 페이지에 적용하기로 함
+
+# fontawesome 에는 여러가지 이미지를 가지고 와서 사용할수 있다.
+ <link rel="stylesheet" href="/js/plugins/fontawesome-free/css/all.min.css">
+templates/layouts/layout-head.html 에있다
