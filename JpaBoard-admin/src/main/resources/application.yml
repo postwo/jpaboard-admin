@@ -6,6 +6,7 @@ logging:
     com.example.JpaBoard_admin: debug #JpaBoard_admin은 메인패키지명이다
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.springframework.web.client.RestTemplate: debug
 
 server.port: 8081
 
