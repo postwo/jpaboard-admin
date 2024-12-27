@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@DisplayName("View 컨트롤러 - 게시글 관리")
+@DisplayName("컨트롤러 - 게시글 관리")
 @Import(SecurityConfig.class)
 @WebMvcTest(ArticleManagementController.class)
 class ArticleManagementControllerTest {
@@ -38,7 +38,7 @@ class ArticleManagementControllerTest {
         this.mvc = mvc;
     }
 
-    @DisplayName("[view][GET] 게시글 관리 페이지 - 정상 호출")
+    @DisplayName("[view][POST] 게시글 삭제 - 정상 호출")
     @Test
     void givenNothing_whenRequestingArticleManagementView_thenReturnsArticleManagementView() throws Exception {
         // Given
