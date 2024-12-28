@@ -1,6 +1,5 @@
 package com.example.JpaBoard_admin.service;
 
-import com.example.JpaBoard_admin.domain.constant.RoleType;
 import com.example.JpaBoard_admin.dto.ArticleCommentDto;
 import com.example.JpaBoard_admin.dto.UserAccountDto;
 import com.example.JpaBoard_admin.dto.properties.ProjectProperties;
@@ -18,9 +17,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.client.MockRestServiceServer;
+
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
@@ -152,7 +152,6 @@ class ArticleCommentManagementServiceTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "unoTest",
-                Set.of(RoleType.ADMIN),
                 "uno-test@email.com",
                 "uno-test",
                 "test memo"

@@ -1,7 +1,6 @@
 package com.example.JpaBoard_admin.controller;
 
 import com.example.JpaBoard_admin.config.SecurityConfig;
-import com.example.JpaBoard_admin.domain.constant.RoleType;
 import com.example.JpaBoard_admin.dto.ArticleDto;
 import com.example.JpaBoard_admin.dto.UserAccountDto;
 import com.example.JpaBoard_admin.service.ArticleManagementService;
@@ -16,7 +15,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 import static org.mockito.BDDMockito.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
@@ -107,7 +105,6 @@ class ArticleManagementControllerTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "unoTest",
-                Set.of(RoleType.ADMIN),
                 "uno-test@email.com",
                 "uno-test",
                 "test memo"
