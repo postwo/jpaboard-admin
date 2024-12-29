@@ -1,6 +1,6 @@
 package com.example.JpaBoard_admin.controller;
 
-import com.example.JpaBoard_admin.config.SecurityConfig;
+import com.example.JpaBoard_admin.config.TestSecurityConfig;
 import com.example.JpaBoard_admin.dto.ArticleDto;
 import com.example.JpaBoard_admin.dto.UserAccountDto;
 import com.example.JpaBoard_admin.service.ArticleManagementService;
@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 게시글 관리")
-@Import(SecurityConfig.class)
+@Import(TestSecurityConfig.class)
 @WebMvcTest(ArticleManagementController.class)
 class ArticleManagementControllerTest {
 

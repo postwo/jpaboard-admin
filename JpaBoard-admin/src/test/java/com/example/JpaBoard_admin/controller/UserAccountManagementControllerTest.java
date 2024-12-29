@@ -1,6 +1,6 @@
 package com.example.JpaBoard_admin.controller;
 
-import com.example.JpaBoard_admin.config.SecurityConfig;
+import com.example.JpaBoard_admin.config.TestSecurityConfig;
 import com.example.JpaBoard_admin.dto.UserAccountDto;
 import com.example.JpaBoard_admin.service.UserAccountManagementService;
 import org.junit.jupiter.api.DisplayName;
@@ -13,15 +13,15 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
+
 import static org.mockito.BDDMockito.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 회원 관리")
-@Import(SecurityConfig.class)
+@Import(TestSecurityConfig.class)
 @WebMvcTest(UserAccountManagementController.class)
 class UserAccountManagementControllerTest {
     private final MockMvc mvc;
