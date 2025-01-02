@@ -56,16 +56,16 @@ class ArticleManagementServiceTest {
     }
 
     @DisplayName("API mocking 테스트")
-    @EnableConfigurationProperties(ProjectProperties.class)
-    @AutoConfigureWebClient(registerRestTemplate = true)
-    @RestClientTest(ArticleManagementService.class)
-    @Nested
+    @EnableConfigurationProperties(ProjectProperties.class) //이거는 ProjectProperties를 사용한다는 뜻이다.
+    @AutoConfigureWebClient(registerRestTemplate = true) //rest 템플릿을 읃록 안하고 하는게 기본인데 근데 이거를 true로 줘서 자동으로 내가 등록한 Beanconfig를 가지고 온다.
+    @RestClientTest(ArticleManagementService.class) //rest 클라이언트를 mock 한다는 뜻이다.
+    @Nested //중첩 테스트를 할 수 있게 해준다
     class RestTemplateTest {
 
         private final ArticleManagementService sut;
         private final ProjectProperties projectProperties;
         private final MockRestServiceServer server;
-        private final ObjectMapper mapper;
+        private final ObjectMapper mapper; //Java 객체를 JSON으로 변환하거나 JSON을 Java 객체로 변환하는 데 사용하기 위해 사용(직)
 
         @Autowired
         public RestTemplateTest(
