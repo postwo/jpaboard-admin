@@ -34,7 +34,7 @@ class ArticleManagementServiceTest {
     //    @Disabled("실제 API 호출 결과 관찰용이므로 평상시엔 비활성화")
     @DisplayName("실제 API 호출 테스트")
     @SpringBootTest
-    @Nested
+    @Nested //중첩 테스트를 할 수 있게 해준다
     class RealApiTest {
         private final ArticleManagementService sut;
 
@@ -65,8 +65,9 @@ class ArticleManagementServiceTest {
         private final ArticleManagementService sut;
         private final ProjectProperties projectProperties;
         private final MockRestServiceServer server;
-        private final ObjectMapper mapper; //Java 객체를 JSON으로 변환하거나 JSON을 Java 객체로 변환하는 데 사용하기 위해 사용(직)
+        private final ObjectMapper mapper; //Java 객체를 JSON으로 변환하거나 JSON을 Java 객체로 변환하는 데 사용하기 위해 사용(이거를 직렬화 역직렬화라고 한다.)
 
+        //이거는 위에 final을 생성자로 주입하는 방식이다.
         @Autowired
         public RestTemplateTest(
                 ArticleManagementService sut,
@@ -87,7 +88,7 @@ class ArticleManagementServiceTest {
             ArticleDto expectedArticle = createArticleDto("제목", "글");
             ArticleClientResponse expectedResponse = ArticleClientResponse.of(List.of(expectedArticle));
             server
-                    .expect(requestTo(projectProperties.board().url() + "/api/articles?size=10000"))
+                    .expect(requestTo(projectProperties.board().url() + "/api/articles?size=10000")) //전체 데이터를 가지고 오기 위해 일단 10000으로 사이즈를 지정
                     .andRespond(withSuccess(
                             mapper.writeValueAsString(expectedResponse),
                             MediaType.APPLICATION_JSON
@@ -100,7 +101,7 @@ class ArticleManagementServiceTest {
                     .hasFieldOrPropertyWithValue("title", expectedArticle.title())
                     .hasFieldOrPropertyWithValue("content", expectedArticle.content())
                     .hasFieldOrPropertyWithValue("userAccount.nickname", expectedArticle.userAccount().nickname());
-            server.verify();
+            server.verify(); //verify는 위에 server 요청이 실제로 이루어졌는지를 검사한다.
         }
 
         @DisplayName("게시글 ID와 함께 게시글 API을 호출하면, 게시글을 가져온다.")

@@ -92,3 +92,5 @@ kakaooauth 키값(다른아이디 사용)도 다른걸써야하고 데이터베�
 # fontawesome 에는 여러가지 이미지를 가지고 와서 사용할수 있다.
  <link rel="stylesheet" href="/js/plugins/fontawesome-free/css/all.min.css">
 templates/layouts/layout-head.html 에있다
+
+# HAL Explorer 문서화 된거 볼려면 jpaboardapllication으로 run 하기 경로는 localhost:8080/api

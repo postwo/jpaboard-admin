@@ -39,7 +39,7 @@ class ArticleManagementControllerTest {
     @DisplayName("[view][POST] 게시글 삭제 - 정상 호출")
     @Test
     void givenNothing_whenRequestingArticleManagementView_thenReturnsArticleManagementView() throws Exception {
-        // Given
+        // Giv  en
         given(articleManagementService.getArticles()).willReturn(List.of());
 
         // When & Then
