@@ -1,5 +1,6 @@
 package com.example.JpaBoard_admin.controller;
 
+import com.example.JpaBoard_admin.config.GlobalControllerConfig;
 import com.example.JpaBoard_admin.config.TestSecurityConfig;
 import com.example.JpaBoard_admin.dto.UserAccountDto;
 import com.example.JpaBoard_admin.service.UserAccountManagementService;
@@ -22,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 회원 관리")
-@Import(TestSecurityConfig.class)
+@Import({TestSecurityConfig.class, GlobalControllerConfig.class})
 @WebMvcTest(UserAccountManagementController.class)
 class UserAccountManagementControllerTest {
     private final MockMvc mvc;

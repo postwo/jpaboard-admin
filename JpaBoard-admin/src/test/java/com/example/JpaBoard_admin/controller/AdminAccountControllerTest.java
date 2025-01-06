@@ -1,5 +1,6 @@
 package com.example.JpaBoard_admin.controller;
 
+import com.example.JpaBoard_admin.config.GlobalControllerConfig;
 import com.example.JpaBoard_admin.config.SecurityConfig;
 import com.example.JpaBoard_admin.domain.constant.RoleType;
 import com.example.JpaBoard_admin.dto.AdminAccountDto;
@@ -26,7 +27,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 어드민 회원")
-@Import(SecurityConfig.class)
+@Import({SecurityConfig.class, GlobalControllerConfig.class})
 @WebMvcTest(AdminAccountController.class)
 class AdminAccountControllerTest {
     private final MockMvc mvc;

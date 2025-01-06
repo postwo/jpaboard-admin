@@ -1,5 +1,6 @@
 package com.example.JpaBoard_admin.controller;
 
+import com.example.JpaBoard_admin.config.GlobalControllerConfig;
 import com.example.JpaBoard_admin.config.TestSecurityConfig;
 import com.example.JpaBoard_admin.dto.ArticleCommentDto;
 import com.example.JpaBoard_admin.dto.UserAccountDto;
@@ -24,7 +25,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 댓글 관리")
-@Import(TestSecurityConfig.class)
+@Import({TestSecurityConfig.class, GlobalControllerConfig.class})
 @WebMvcTest(ArticleCommentManagementController.class)
 class ArticleCommentManagementControllerTest {
     private final MockMvc mvc;
