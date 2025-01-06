@@ -1,5 +1,6 @@
 package com.example.JpaBoard_admin.controller;
 
+import com.example.JpaBoard_admin.dto.response.UserAccountResponse;
 import com.example.JpaBoard_admin.service.UserAccountManagementService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
