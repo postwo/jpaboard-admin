@@ -35,6 +35,9 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
+	implementation 'io.micrometer:micrometer-core:1.11.3'
+	implementation 'io.micrometer:micrometer-registry-prometheus:1.11.3'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 }
