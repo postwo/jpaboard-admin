@@ -1,9 +1,10 @@
 package com.example.JpaBoard_admin.controller.advice;
 
+import com.example.JpaBoard_admin.dto.websocket.WebSocketMessage;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.socket.WebSocketMessage;
+
 
 import java.security.Principal;
 
