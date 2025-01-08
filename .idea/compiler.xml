@@ -11,5 +11,8 @@
         <module name="JpaBoard-admin.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JpaBoard" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
